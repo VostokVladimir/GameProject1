@@ -10,17 +10,37 @@ public class Distance : MonoBehaviour
     [SerializeField] private Transform  ShotSpawn;
     public float fireRate = 1.5f;
     public float nextFire = 0.0f;
+    private bool playerInZone = false;
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            playerInZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            playerInZone = false;
+        }
+    }
+
+
+
     public void Update()
     {
-
-        if(Time.time > nextFire)
+        if (playerInZone == true)
         {
-            nextFire = Time.time + fireRate;
-            //Instantiate(PrefabLaser, ShotSpawn.position, ShotSpawn.rotation);
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                //Instantiate(PrefabLaser, ShotSpawn.position, ShotSpawn.rotation);
 
-            Instantiate(Bulet, ShotSpawn.position, ShotSpawn.rotation);
+                Instantiate(Bulet, ShotSpawn.position, ShotSpawn.rotation);
+            }
         }
            
            

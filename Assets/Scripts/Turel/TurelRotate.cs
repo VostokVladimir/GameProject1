@@ -9,22 +9,14 @@ public class TurelRotate : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     private void Update()
     {
         Vector3 targetDir = _target.position-transform.position;//определяем текущий вектор до цели
                                                                 // Vector3 newDir = Vector3.RotateTowards(transform.position, targetDir, _speed * Time.deltaTime,0.2f);
                                                                 //Debug.DrawRay(transform.position, newDir, Color.green);
        
-        Debug.Log(targetDir.sqrMagnitude);
-        Debug.Log(_distanceToTarget);
         if (targetDir.sqrMagnitude <= (_distanceToTarget * _distanceToTarget))
-        {   //transform.rotation = Quaternion.LookRotation(newDir);
+        {   
             transform.LookAt(_target.position);
         }
 

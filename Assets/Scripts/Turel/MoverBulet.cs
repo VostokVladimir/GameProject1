@@ -17,8 +17,9 @@ public class MoverBulet : MonoBehaviour
     void Update()
     {
         
-        transform.position= transform.position+transform.forward*Time.deltaTime * Speed;//постоянно пуля летит кудато вбок 
+        transform.position= transform.position+transform.right*Time.deltaTime * Speed;//постоянно пуля летит кудато вбок 
         //var direction = pointB.position - transform.position;
         //transform.Translate(direction * Time.deltaTime * Speed);
+        
     }
 }
