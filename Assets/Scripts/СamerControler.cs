@@ -1,9 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class СamerControler : MonoBehaviour
-{ //контролер камеры
+{ //контролер камеры добавлено изменение
     [SerializeField]private GameObject _gameObject;
     private Vector3 _cameraDistance;
 
