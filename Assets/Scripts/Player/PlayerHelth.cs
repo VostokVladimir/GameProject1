@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHelth : MonoBehaviour
 {
     [SerializeField] private int _health = 4;
+    [SerializeField] private int _scoreStatement = 0;
 
     public void Damage(int damage)
     {
@@ -14,5 +15,12 @@ public class PlayerHelth : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("Питер убит");
         }
+    }
+
+    public void PickUpStatement (int _quantityStatement)
+    {
+        _scoreStatement = _scoreStatement + _quantityStatement;
+
+
     }
 }

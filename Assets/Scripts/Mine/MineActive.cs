@@ -7,10 +7,7 @@ public class MineActive : MonoBehaviour
     [SerializeField] private int _damage = 2;
     [SerializeField] private float _destroytime = 3f;
     // Start is called before the first frame update
-    private void Start()
-    {
-         
-    }
+    
 
     // Update is called once per frame
     private void OnTriggerEnter(Collider collision)
